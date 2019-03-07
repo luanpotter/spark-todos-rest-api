@@ -1,9 +1,10 @@
 package xyz.luan.rest.todos;
 
-import static spark.Spark.*;
+import xyz.luan.rest.todos.todo.TodosController;
 
 public class Main {
-    public static void main(String[] args) {
-        get("/hello", (req, res) -> "Hello World");
-    }
+
+	public static void main(String[] args) {
+		new TodosController().init();
+	}
 }
