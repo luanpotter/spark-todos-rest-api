@@ -7,7 +7,11 @@ import java.util.List;
 
 public class DB {
 
-	public static Database db = Database.forUrlAndCredentials("jdbc:postgresql://[::1]:5432/todo-api", "todo-api", "123");
+	public static Database db;
+
+	public static void initDb() {
+		db = Database.forUrlAndCredentials("jdbc:postgresql://[::1]:5432/todo-api", "todo-api", "123");
+	}
 
 	public static Long updateAndGetGeneratedId(SqlQuery query) {
 		return db.updateAndProcessGeneratedKeys(result -> {
